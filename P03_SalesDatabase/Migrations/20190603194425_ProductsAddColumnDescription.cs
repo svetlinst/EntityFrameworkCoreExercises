@@ -7,7 +7,7 @@ namespace P03_SalesDatabase.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AddColumn<string>(
-                name: "Decription",
+                name: "Description",
                 table: "Products",
                 maxLength: 250,
                 nullable: true,
@@ -17,7 +17,7 @@ namespace P03_SalesDatabase.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropColumn(
-                name: "Decription",
+                name: "Description",
                 table: "Products");
         }
     }

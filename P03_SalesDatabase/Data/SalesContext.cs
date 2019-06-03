@@ -110,13 +110,13 @@ namespace P03_SalesDatabase.Data
 
             modelBuilder
                 .Entity<Product>()
-                .Property(x => x.Decription)
+                .Property(x => x.Description)
                 .HasMaxLength(250)
                 .IsUnicode(true);
 
             modelBuilder
                 .Entity<Product>()
-                .Property(x => x.Decription)
+                .Property(x => x.Description)
                 .HasDefaultValue("No description");
         }
     }
