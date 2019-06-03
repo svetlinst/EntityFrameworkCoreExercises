@@ -10,7 +10,7 @@ namespace P01_HospitalDatabase.Data.Models
 
         public string Name { get; set; }
 
-        public string Speciality { get; set; }
+        public string Specialty { get; set; }
 
         public ICollection<Visitation> Visitations { get; set; }
 

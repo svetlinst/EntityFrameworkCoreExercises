@@ -18,6 +18,9 @@ namespace P01_HospitalDatabase.Data
 
         public DbSet<PatientMedicament> Prescriptions { get; set; }
 
+        public DbSet<Doctor> Doctors { get; set; }
+
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
@@ -39,6 +42,27 @@ namespace P01_HospitalDatabase.Data
             ConfigMedicamentModel(modelBuilder);
 
             ConfigPrescriptionsModel(modelBuilder);
+
+            ConfigDoctorsModel(modelBuilder);
+        }
+
+        private void ConfigDoctorsModel(ModelBuilder modelBuilder)
+        {
+            modelBuilder
+                .Entity<Doctor>()
+                .HasKey(x => x.DoctorId);
+
+            modelBuilder
+                .Entity<Doctor>()
+                .Property(x => x.Name)
+                .HasMaxLength(100)
+                .IsUnicode(true);
+
+            modelBuilder
+                .Entity<Doctor>()
+                .Property(x => x.Specialty)
+                .HasMaxLength(100)
+                .IsUnicode(true);
         }
 
         private void ConfigPrescriptionsModel(ModelBuilder modelBuilder)
