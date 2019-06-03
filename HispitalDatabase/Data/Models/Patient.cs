@@ -23,5 +23,12 @@ namespace P01_HospitalDatabase.Data.Models
         public ICollection<Diagnose> Diagnoses { get; set; }
 
         public ICollection<PatientMedicament> Prescriptions { get; set; }
+
+        public Patient()
+        {
+            this.Visitations = new List<Visitation>();
+            this.Diagnoses = new List<Diagnose>();
+            this.Prescriptions = new List<PatientMedicament>();
+        }
     }
 }
